@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Movie JS</title>
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" rel="stylesheet"/>
+
+
+
+        <link rel="stylesheet" href="style2.css">
+    </head>
+    <body>
+        <div id="container">
+            <div id="video-holder">
+                <video id="vid" src="mov_bbb.mp4"  position="fixed" controls loop></video>
+            </div>
+            
+            <br/>
+            
+            <div class="vid-btn" onclick="playVid()">Play</div>
+            <div class="vid-btn" onclick="pauseVid()">Pause</div>
+            <!-- <div class="vid-btn" onclick="minVol()">Vol --</div>
+            <div class="vid-btn" onclick="maxVol()">Vol ++</div> -->
+
+            <div class="vid-btn" onclick="updateVol(-0.1)">Vol --</div>
+            <div class="vid-btn" onclick="updateVol(0.1)">Vol ++</div>
+            
+            <br/>
+            <div id="switch-btn" class="vid-btn" onclick="switchClick()">
+                <i class="fas fa-play"></i>
+            </div>
+
+            <p onclick="switchVid('mov_bbb.mp4')">Play BBB</p>
+            <p onclick="switchVid('movie.mp4')">Play Bear</p>
+        </div>
+        <script src="video.js"> </script>
+    </body>
+</html>

@@ -1,33 +1,44 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Redirectory to Day 8 Challenges</title>
-        <style>
-            * {margin: 0; padding: 0;}
-            #container {
-                width: 900px;
-                height: 800px;
-                margin: 0 auto;
-                background-color: cadetblue;
-                text-align: center;
-                padding: 20px;
-                box-sizing: border-box;
-            }
-            .content {
-                width: 900px;
-                height: 150px;
-
-            }
-          
-        </style>
-    </head>
-
-    <body>
-        <div id="container">
-            <div class="content"><h1>Day 8 Challenges</h1></div>
-            <div class="content"><a href="day8.html" target="_blank">Responsive Page 1</a></div>
-            
-        </div>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Day 8 Music Player</title>
+        <link rel="stylesheet" href="day8style.css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" rel="stylesheet"/>
         
+    </head>
+    <body>
+        <div id="app">
+            <section id="video-container">
+                <video id="vid" src="ballons.mp4" controls loop></video>
+            </section>
+
+            <section id="title-container">
+
+                <div id="previous" class="vid-btn" onclick="switchPrevious()">
+                    <i class="fas fa-backward"></i>
+                </div>
+
+                <div id="switch-btn" class="vid-btn" onclick="switchClick()">
+                    <i class="fas fa-play"></i>
+                </div>
+
+                <div id="next" class="vid-btn" onclick="switchNext()">
+                    <i class="fas fa-forward"></i>
+                </div>
+                <div class="vid-btn" onclick="updateVol(-0.1)"><i class="fas fa-volume-down"></i></div>
+                <div class="vid-btn" onclick="updateVol(0.1)"><i class="fas fa-volume-up"></i></div>
+                <div id="mute-btn" class="vid-btn" onclick="muteVol()"><i class="fas fa-volume-mute"></i></div>
+            </section>
+
+            <section id="list-container">
+                <video onclick="switchVid('ballons.mp4')" src="ballons.mp4"></video>
+                <video onclick="switchVid('wheel.mp4')" src="wheel.mp4"></video>
+                <video onclick="switchVid('ocean.mp4')" src="ocean.mp4"></video>
+                <video onclick="switchVid('skate.mp4')" src="skate.mp4"></video>
+            </section>
+
+        </div>
+        <script src="day8js.js"></script>
     </body>
 </html>
